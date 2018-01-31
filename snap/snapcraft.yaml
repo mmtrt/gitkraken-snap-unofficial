@@ -5,6 +5,7 @@ description: |
   The best Git client should integrate with your Git hosting service. That’s why GitKraken connects to popular services like GitHub, Bitbucket and GitLab to make working with your remote repositories easier.
 
 grade: stable
+architectures: [amd64]
 confinement: strict
 
 parts:
