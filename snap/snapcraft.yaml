@@ -26,7 +26,11 @@ parts:
       - gconf-service
       - libnotify4
       - libxtst6
+      - libxkbfile1
+      - libxss1
       - libnss3
+      - librtmp1
+      - libcurl3
       - python
       - gvfs-bin
       - xdg-utils
