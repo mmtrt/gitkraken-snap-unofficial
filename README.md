@@ -16,7 +16,7 @@ distributions.</p>
 ## Install
 
     sudo snap install gitkraken --edge
-    sudo snap connect gitkraken:network-observe core:network-observe
+    sudo snap connect gitkraken:network-observe
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
