@@ -1,5 +1,5 @@
 name: gitkraken
-version: '3.3.4'
+version: '3.4.0'
 summary: Unleash your repo.
 description: |
   The best Git client should integrate with your Git hosting service. That’s why GitKraken connects to popular services like GitHub, Bitbucket and GitLab to make working with your remote repositories easier.
@@ -18,6 +18,7 @@ parts:
     prepare: |
       sed -i 's|Icon=app|Icon=/usr/share/pixmaps/app\.png|' usr/share/applications/gitkraken.desktop
       execstack --clear-execstack usr/share/gitkraken/gitkraken
+      execstack --clear-execstack usr/share/gitkraken/resources/app.asar.unpacked/node_modules/nodegit/build/Release/nodegit.node
       rm -r usr/bin
     after:
       - desktop-gtk2
@@ -33,7 +34,6 @@ parts:
       - libcurl3
       - python
       - gvfs-bin
-      - xdg-utils
       - libgnome-keyring0
       - gir1.2-gnomekeyring-1.0
       - libcanberra-gtk-module
@@ -55,7 +55,6 @@ apps:
       - gsettings
       - home
       - network
-      - network-observe
       - opengl
       - unity7
       - wayland
