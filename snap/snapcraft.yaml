@@ -1,5 +1,5 @@
 name: gitkraken
-version: '3.4.0'
+version: '3.5.0'
 summary: Unleash your repo.
 description: |
   The best Git client should integrate with your Git hosting service. That’s why GitKraken connects to popular services like GitHub, Bitbucket and GitLab to make working with your remote repositories easier.
