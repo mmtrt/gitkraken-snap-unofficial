@@ -60,3 +60,4 @@ apps:
       - wayland
       - x11
       - removable-media
+      - ssh-public-keys
