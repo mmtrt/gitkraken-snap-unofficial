@@ -1,5 +1,6 @@
 name: gitkraken
-version: '3.5.0'
+version: latest
+version-script: cat $SNAPCRAFT_STAGE/version
 summary: Unleash your repo.
 description: |
   The best Git client should integrate with your Git hosting service. That’s why GitKraken connects to popular services like GitHub, Bitbucket and GitLab to make working with your remote repositories easier.
@@ -15,11 +16,15 @@ parts:
     source-type: deb
     build-packages:
       - execstack
+      - wget
     prepare: |
       sed -i 's|Icon=app|Icon=/usr/share/pixmaps/app\.png|' usr/share/applications/gitkraken.desktop
       execstack --clear-execstack usr/share/gitkraken/gitkraken
       execstack --clear-execstack usr/share/gitkraken/resources/app.asar.unpacked/node_modules/nodegit/build/Release/nodegit.node
       rm -r usr/bin
+    install: |
+      ver=$(wget https://www.gitkraken.com/download -q -S -O - 2>&1 | grep Latest | awk '{print $4}' | sed 's|</strong></p>||')
+      echo $ver > $SNAPCRAFT_STAGE/version
     after:
       - desktop-gtk2
     stage-packages:
