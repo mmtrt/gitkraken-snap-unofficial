@@ -21,7 +21,6 @@ parts:
       sed -i 's|Icon=app|Icon=/usr/share/pixmaps/app\.png|' usr/share/applications/gitkraken.desktop
       execstack --clear-execstack usr/share/gitkraken/gitkraken
       execstack --clear-execstack usr/share/gitkraken/resources/app.asar.unpacked/node_modules/nodegit/build/Release/nodegit.node
-      rm -r usr/bin
     install: |
       ver=$(wget https://www.gitkraken.com/download -q -S -O - 2>&1 | grep Latest | awk '{print $4}' | sed 's|</strong></p>||')
       echo $ver > $SNAPCRAFT_STAGE/version
