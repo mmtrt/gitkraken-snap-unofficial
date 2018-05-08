@@ -17,10 +17,7 @@ parts:
     source: https://release.gitkraken.com/linux/gitkraken-amd64.deb
     source-type: deb
     build-packages:
-      - execstack
       - wget
-      execstack --clear-execstack usr/share/gitkraken/gitkraken
-      execstack --clear-execstack usr/share/gitkraken/resources/app.asar.unpacked/node_modules/nodegit/build/Release/nodegit.node
     override-build: |
       snapcraftctl build
       set -ex
