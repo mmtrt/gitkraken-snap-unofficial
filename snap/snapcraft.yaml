@@ -16,8 +16,6 @@ parts:
     plugin: dump
     source: https://release.gitkraken.com/linux/gitkraken-amd64.deb
     source-type: deb
-    build-packages:
-      - wget
     override-build: |
       snapcraftctl build
       set -ex
@@ -26,6 +24,8 @@ parts:
       sed -i 's|Icon=app|Icon=/usr/share/pixmaps/app\.png|' $SNAPCRAFT_PART_INSTALL/usr/share/applications/gitkraken.desktop
     after:
       - desktop-gtk2
+    build-packages:
+      - wget
     stage-packages:
       - gconf2
       - gconf-service
