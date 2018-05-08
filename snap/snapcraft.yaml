@@ -44,6 +44,17 @@ parts:
       - libatk-adaptor
       - libgail-common
       - overlay-scrollbar-gtk2
+    prime:
+      - -usr/share/doc
+      - -usr/share/man
+      - -usr/share/lintian
+
+  desktop-gtk2:
+    prime:
+      - -usr/share/doc
+      - -usr/share/man
+      - -usr/share/lintian
+      - -bindtextdomain.so
 
 apps:
   gitkraken:
