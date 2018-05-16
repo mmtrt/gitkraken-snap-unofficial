@@ -54,7 +54,6 @@ parts:
       - -usr/share/doc
       - -usr/share/man
       - -usr/share/lintian
-      - -bindtextdomain.so
 
 apps:
   gitkraken:
