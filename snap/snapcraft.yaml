@@ -22,6 +22,7 @@ parts:
       ver=$(wget https://www.gitkraken.com/download -q -S -O - 2>&1 | grep Latest | awk '{print $4}' | sed 's|</strong></p>||')
       echo $ver > $SNAPCRAFT_STAGE/version
       sed -i 's|Icon=app|Icon=/usr/share/pixmaps/app\.png|' $SNAPCRAFT_PART_INSTALL/usr/share/applications/gitkraken.desktop
+      rm -r usr/bin
     after:
       - desktop-gtk2
     build-packages:
