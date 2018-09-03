@@ -44,6 +44,8 @@ parts:
       - libatk-adaptor
       - libgail-common
       - overlay-scrollbar-gtk2
+      - git
+      - git-lfs
     prime:
       - -usr/share/doc
       - -usr/share/man
@@ -51,10 +53,22 @@ parts:
       - -usr/bin/gitkraken
 
   desktop-gtk2:
+    after:
+      - git-lfs
     prime:
       - -usr/share/doc
       - -usr/share/man
       - -usr/share/lintian
+
+  git-lfs:
+    plugin: nil
+    override-build: |
+      curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+    build-packages:
+      - curl
+      - gnupg
+      - software-properties-common
+      - apt-transport-https
 
 apps:
   gitkraken:
