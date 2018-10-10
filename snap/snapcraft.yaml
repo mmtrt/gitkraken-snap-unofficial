@@ -46,6 +46,7 @@ parts:
       - overlay-scrollbar-gtk2
       - git
       - git-lfs
+      - gnome-terminal
     prime:
       - -usr/share/doc
       - -usr/share/man
