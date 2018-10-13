@@ -38,12 +38,9 @@ parts:
       - libcurl3
       - python
       - gvfs-bin
+      - libgcrypt20
       - libgnome-keyring0
       - gir1.2-gnomekeyring-1.0
-      - libcanberra-gtk-module
-      - libatk-adaptor
-      - libgail-common
-      - overlay-scrollbar-gtk2
       - git
       - git-lfs
     prime:
