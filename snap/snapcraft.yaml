@@ -29,6 +29,7 @@ parts:
     stage-packages:
       - gconf2
       - gconf-service
+      - libasound2
       - libnotify4
       - libxtst6
       - libxkbfile1
