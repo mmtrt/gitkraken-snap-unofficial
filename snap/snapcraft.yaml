@@ -40,7 +40,6 @@ parts:
       - libgck-1-0
       - libgcr-base-3-1
       - libgtk2.0-0
-      - libudev0
       - python
       - gvfs-bin
       - gvfs-libs
