@@ -39,15 +39,11 @@ parts:
       - libcurl3
       - libgck-1-0
       - libgcr-base-3-1
-      - libgtk2.0-0
       - python
       - gvfs-bin
-      - gvfs-libs
-      - gvfs-common
-      - gvfs-daemons
-      - libgcrypt20
       - libgnome-keyring0
       - gir1.2-gnomekeyring-1.0
+      - libcanberra-gtk-module
       - git
       - git-lfs
     prime:
