@@ -53,6 +53,7 @@ parts:
       - -usr/bin/gitkraken
 
   desktop-gtk2:
+    source-tag: v20180201
     after:
       - git-lfs
     prime:
