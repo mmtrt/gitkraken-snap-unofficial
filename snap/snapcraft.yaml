@@ -68,6 +68,8 @@ parts:
       - -usr/share/man
       - -usr/share/lintian
       - -usr/bin/gitkraken
+      - -usr/share/themes
+      - -usr/share/sounds
 
   desktop-gtk3:
     after:
