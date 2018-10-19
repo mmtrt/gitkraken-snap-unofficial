@@ -54,13 +54,10 @@ parts:
       - libnss3
       - librtmp1
       - libcurl3
-      - libgck-1-0
-      - libgcr-base-3-1
       - python
       - gvfs-bin
       - libgnome-keyring0
       - gir1.2-gnomekeyring-1.0
-      - libcanberra-gtk-module
       - git
       - git-lfs
     prime:
