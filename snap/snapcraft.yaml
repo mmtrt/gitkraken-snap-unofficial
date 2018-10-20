@@ -88,8 +88,6 @@ parts:
       - -usr/share/man
       - -usr/share/lintian
       - -usr/bin/gitkraken
-      - -usr/share/themes
-      - -usr/share/sounds
 
   desktop-gtk3:
     after:
@@ -98,9 +96,6 @@ parts:
       - -usr/share/doc
       - -usr/share/man
       - -usr/share/lintian
-      - -usr/share/themes
-      - -usr/share/icons
-      - -usr/share/sounds
 
   git-lfs:
     plugin: nil
