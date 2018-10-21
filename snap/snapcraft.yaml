@@ -44,6 +44,7 @@ parts:
       - git
       - git-lfs
       - human-icon-theme
+      - gnome-terminal
     prime:
       - -usr/share/doc
       - -usr/share/man
