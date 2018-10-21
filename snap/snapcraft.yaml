@@ -43,6 +43,7 @@ parts:
       - gir1.2-gnomekeyring-1.0
       - git
       - git-lfs
+      - human-icon-theme
     prime:
       - -usr/share/doc
       - -usr/share/man
