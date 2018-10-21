@@ -23,12 +23,13 @@ parts:
       cp -R -p usr $SNAPCRAFT_PART_INSTALL/
       sed -i 's|Icon=app|Icon=/usr/share/pixmaps/app\.png|' $SNAPCRAFT_PART_INSTALL/usr/share/applications/gitkraken.desktop
     after:
-      - desktop-gtk2
+      - desktop-gtk3
     build-packages:
       - wget
     stage-packages:
       - gconf2
       - gconf-service
+      - libasound2
       - libnotify4
       - libxtst6
       - libxkbfile1
@@ -40,10 +41,6 @@ parts:
       - gvfs-bin
       - libgnome-keyring0
       - gir1.2-gnomekeyring-1.0
-      - libcanberra-gtk-module
-      - libatk-adaptor
-      - libgail-common
-      - overlay-scrollbar-gtk2
       - git
       - git-lfs
       - gnome-terminal
@@ -53,7 +50,7 @@ parts:
       - -usr/share/lintian
       - -usr/bin/gitkraken
 
-  desktop-gtk2:
+  desktop-gtk3:
     after:
       - git-lfs
     prime:
