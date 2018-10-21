@@ -11,6 +11,20 @@ architectures:
   - build-on: amd64
     run-on: [amd64]
 
+plugs:
+  gtk-3-themes:
+    interface: content
+    target: $SNAP/share/themes
+    default-provider: gtk-common-themes:gtk-3-themes
+  icon-themes:
+    interface: content
+    target: $SNAP/share/icons
+    default-provider: gtk-common-themes:icon-themes
+  sound-themes:
+    interface: content
+    target: $SNAP/share/sounds
+    default-provider: gtk-common-themes:sounds-themes
+
 parts:
   gitkraken:
     plugin: nil
@@ -22,6 +36,9 @@ parts:
       wget https://release.gitkraken.com/linux/gitkraken-amd64.deb && dpkg-deb -xv gitkraken-amd64.deb .
       cp -R -p usr $SNAPCRAFT_PART_INSTALL/
       sed -i 's|Icon=app|Icon=/usr/share/pixmaps/app\.png|' $SNAPCRAFT_PART_INSTALL/usr/share/applications/gitkraken.desktop
+      mkdir -p $SNAPCRAFT_PART_INSTALL/share/themes
+      mkdir -p $SNAPCRAFT_PART_INSTALL/share/icons
+      mkdir -p $SNAPCRAFT_PART_INSTALL/share/sounds
     after:
       - desktop-gtk3
     build-packages:
@@ -43,13 +60,14 @@ parts:
       - gir1.2-gnomekeyring-1.0
       - git
       - git-lfs
-      - human-icon-theme
       - gnome-terminal
     prime:
       - -usr/share/doc
       - -usr/share/man
       - -usr/share/lintian
       - -usr/bin/gitkraken
+      - -usr/share/themes
+      - -usr/share/sounds
 
   desktop-gtk3:
     after:
@@ -58,6 +76,9 @@ parts:
       - -usr/share/doc
       - -usr/share/man
       - -usr/share/lintian
+      - -usr/share/themes
+      - -usr/share/icons
+      - -usr/share/sounds
 
   git-lfs:
     plugin: nil
