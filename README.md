@@ -3,7 +3,7 @@
   <br />
   gitkraken
 </h1>
-> This snap is picked up by upstream developers so it is now released by Axosoft. It has been good 8 months since I released this snap.
+> This snap is picked up by upstream developers so it is now released by Axosoft. It has been good 8 months since I released this snap unofficially.
 
 ## Continue getting the updates of this snap
 
