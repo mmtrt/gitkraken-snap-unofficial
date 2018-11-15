@@ -10,5 +10,5 @@
 * **Remove my old snap if that's Installed**
 	`snap remove gitkraken`
 * **Install the official snap**
-	`snap install --beta gitkraken`
+	`snap install gitkraken`
 
