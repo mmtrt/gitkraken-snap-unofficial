@@ -24,6 +24,9 @@ plugs:
     interface: content
     target: $SNAP/share/sounds
     default-provider: gtk-common-themes:sounds-themes
+  gitconfig:
+    interface: personal-files
+    read: [$HOME/.gitconfig]
 
 parts:
   gitkraken:
@@ -107,3 +110,4 @@ apps:
       - removable-media
       - ssh-keys
       - gpg-keys
+      - gitconfig
