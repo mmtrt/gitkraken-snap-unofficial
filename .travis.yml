@@ -18,6 +18,7 @@ script:
   - export PATH=/snap/bin:$PATH
   - sudo snapcraft cleanbuild
   - ls -al
+  - mv "gitkraken_latest_OrderedDict([('build-on', 'amd64'), ('run-on', ['amd64'])]).snap" "gitkraken_latest.snap"
 after_success:
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
   - bash ./upload.sh ./gitkraken*.snap*
