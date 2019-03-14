@@ -31,7 +31,7 @@ parts:
     override-build: |
       snapcraftctl build
       set -ex
-      ver=$(wget https://www.gitkraken.com/download -q -S -O - 2>&1 | grep Latest | awk '{print $4}' | sed 's|</strong></p>||')
+      ver=$(wget https://www.gitkraken.com/download -q -S -O - 2>&1 | grep Latest | sed 's|</| |' | awk '{print $5}')
       echo $ver > $SNAPCRAFT_STAGE/version
       wget https://release.gitkraken.com/linux/gitkraken-amd64.deb && dpkg-deb -xv gitkraken-amd64.deb .
       cp -R -p usr $SNAPCRAFT_PART_INSTALL/
