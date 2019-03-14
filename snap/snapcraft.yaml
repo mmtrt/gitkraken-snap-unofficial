@@ -60,7 +60,6 @@ parts:
       - gir1.2-gnomekeyring-1.0
       - git
       - git-lfs
-      - gnome-terminal
     prime:
       - -usr/share/doc
       - -usr/share/man
