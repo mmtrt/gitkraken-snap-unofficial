@@ -35,7 +35,7 @@ parts:
       echo $ver > $SNAPCRAFT_STAGE/version
       wget https://release.gitkraken.com/linux/gitkraken-amd64.deb && dpkg-deb -xv gitkraken-amd64.deb .
       cp -R -p usr $SNAPCRAFT_PART_INSTALL/
-      sed -i 's|Icon=app|Icon=/usr/share/pixmaps/app\.png|' $SNAPCRAFT_PART_INSTALL/usr/share/applications/gitkraken.desktop
+      sed -i 's|Icon=gitkraken|Icon=/usr/share/pixmaps/gitkraken\.png|' $SNAPCRAFT_PART_INSTALL/usr/share/applications/gitkraken.desktop
       mkdir -p $SNAPCRAFT_PART_INSTALL/share/themes
       mkdir -p $SNAPCRAFT_PART_INSTALL/share/icons
       mkdir -p $SNAPCRAFT_PART_INSTALL/share/sounds
