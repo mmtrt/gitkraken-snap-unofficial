@@ -17,6 +17,7 @@ install:
 script:
   - export PATH=/snap/bin:$PATH
   - sudo snapcraft cleanbuild
+  - ls -al
 after_success:
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
   - bash ./upload.sh ./gitkraken*.snap*
