@@ -17,11 +17,14 @@ install:
 script:
   - export PATH=/snap/bin:$PATH
   - sudo snapcraft cleanbuild
-  - sudo cp *.snap "$(echo "$TRAVIS_REPO_SLUG" | sed -e 's|.*/\(.*\)|\1|')-pr$TRAVIS_PULL_REQUEST.snap"
 after_success:
-  - sudo snap install transfer
-  - timeout 180 sudo /snap/bin/transfer "$(echo "$TRAVIS_REPO_SLUG" | sed -e 's|.*/\(.*\)|\1|')-pr$TRAVIS_PULL_REQUEST.snap"
+  - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
+  - bash ./upload.sh ./gitkraken*.snap*
 after_failure:
   - sudo journalctl -u snapd
   - sudo snap install http
   - /snap/bin/http https://api.snapcraft.io/v2/snaps/info/core architecture==amd64 Snap-Device-Series:16
+branches:
+  except:
+    - # Do not build tags that we create when we upload to GitHub Releases
+    - /^(?i:continuous)$/
