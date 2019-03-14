@@ -110,3 +110,4 @@ apps:
       - x11
       - removable-media
       - ssh-keys
+      - gpg-keys
